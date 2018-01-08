@@ -1,0 +1,249 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{geometry}
+\usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\usepackage{sectsty}
+
+%Make ShortHands for quick updates
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\sems}{{Fall 2017}}
+\newcommand{\dmidOne}{{3/21}}
+\newcommand{\dquizOne}{{1/31}}
+\newcommand{\dquizTwo}{{2/26}}
+\newcommand{\dquizThree}{{4/4}}
+\newcommand{\dquizFour}{{4/25}}
+\newcommand{\finalDate}{{5/9 1:30-3:30PM}}
+\newcommand{\semsStart}{{1/17}}
+\newcommand{\semsEnd}{5/4}
+\newcommand{\dprojectDue}{5/4}
+\newcommand{\classNum}{MATH 3312}
+\newcommand{\meetingTimes}{MW: 2:35-3:50}
+\newcommand{\classLocation}{MAIN M 211}
+\newcommand{\officeHours}{M 1-3pm, T \& TH 3-4PM, W 2-3PM}
+\newcommand{\courseName}{Linear Algebra}
+  \newcommand{ \lastClass}{5/4}
+
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\classNum} }
+\chead{ \fancyplain{}{\sems} }
+\rhead{ \fancyplain{}{Dr. Hannay} }
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+\renewcommand\thesection{\Roman{section}.}
+\renewcommand\thesubsection{\Alph{subsection}.}
+\sectionfont{\fontsize{12}{15}\selectfont}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{\classNum: \courseName}}
+\end{center}
+\begin{center}
+\sems
+\end{center}
+%\date{September 26, 2014}
+
+\begin{center}
+\rule{6.5in}{0.4pt}
+\begin{minipage}[t]{0.90 \textwidth}
+\begin{tabular}{llcccll}
+\textbf{Instructor:} & Dr. Kevin Hannay & & &  & \textbf{Time:} & \meetingTimes \\
+\textbf{Email:} &  \href{mailto:khannay@schreiner.edu}{khannay@schreiner.edu} & & & & \textbf{Location:} & \classLocation.
+\end{tabular}
+\end{minipage}
+\rule{6.5in}{0.4pt}
+\end{center}
+\vspace{.5cm}
+\setlength{\unitlength}{1in}
+\renewcommand{\arraystretch}{2}
+
+%\noindent\textbf{Course Pages:} \begin{enumerate}
+%\item \url{Schreiner One}
+%\end{enumerate}
+
+\vskip.15in
+\noindent\textbf{Required Materials:} 
+\begin{itemize}
+\item \textit{Introduction to Linear Algebra}, 5th Edition by Gilbert Strang. 
+\item A graphing calculator. The instructor recommends a TI 83 or TI 84, but any calculator with graphing capabilities is acceptable.
+\item Access to scientific computing software (Matlab, Octave, Scientific Python, Mathematica, etc)
+\end{itemize} 
+
+\vskip.15in
+\noindent{\textbf{General Course Outline:}}
+This course will loosely follow the topics as presented in the textbook and other topics as time permits.  However, the exams will be based upon the material presented in lecture and evaluated in the homework assignments. 
+
+%\vskip.15in
+%\noindent\textbf{Computing Access:}
+
+
+\vskip.15in
+\noindent\textbf{Course Description:} 
+This is a study of abstract notions of linear algebra including vector spaces and line art transformations and the applications of these concepts using matrices and determinants.
+\vskip.15in
+\noindent\textbf{Prerequisite:}  MATH 2422.
+
+\vskip.15in
+\noindent\textbf{Learning Objectives:} 
+This course is designed to build the students understanding of linear algebra, including the application of theory to real life situations. At the end of this course, the student will be able to:
+\begin{enumerate}
+\item Learning objectives
+
+\end{enumerate}
+
+\vskip.15in
+\noindent\textbf{Course Requirements:} 
+\begin{enumerate}
+\item There will be two in-class exams: a midterm (15\%) and a comprehensive final exam (15\%).
+\item There will be four take home quizzes handed out during the semester. Each quiz will count towards as 15\% of the students grade. Absolutely no collaboration is allowed on these take home quizzes. Each student must work entirely independently, I will pursue and academic integrity violations with the utmost vigor. You have been warned!!
+\item The lowest score on the exams and quizzes will be dropped at the end of the semester. 
+\item A computational project will make up the last 10\% of the final course grade. Details of this assignment will be provided midway through the semester. 
+\item Grades will be awarded according to the following scale: A: 90-100; B: 80-89; C: 70-79; D: 60-69; F: 0-59.  In the event that you must miss an exam, you MUST notify the instructor and make arrangements to take a make-up exam \textbf{IN ADVANCE}.  Lack of readiness to take an exam is not an excuse unless serious mitigating circumstances are present.  The instructor reserves the right to decide which situations warrant special consideration and which do not.
+\item Students may also earn extra credit by solving a challenge problem provided sporadically by the instructor throughout the semester. The extra-credit received for the solution of a challenge problem will vary with the clarity of the solution and the difficulty of the problem. All challenge problem solutions must be turned in no later than the stroke of midnight on the last class day (\lastClass). Challenge problems will be \textit{challenging} and while I am happy to talk with the students about these problems in office hours I will not provide direct help in solving the problems. Solutions for the challenge problems will be the \textbf{ONLY} opportunities for earning extra-credit during the semester. 
+\item While no formal homework will be assigned during the semester I will provide a list of practice problems for each section we cover in the book. Students will be wise to complete these problems following each class. Issues should be discussed with the instructor well before exams. Exam and quiz  problems will be \textit{heavily} based on these practice problems!
+\item Attendance is essential to the successful completion of this course.  Roll will be taken daily.  While the instructor does not give or deduct points specifically for attendance, it is clear that missing class will adversely affect your learning and your grade.
+\item Please be considerate of your fellow students.  This includes coming to class on time, being prepared, and bringing all necessary materials to class.  You will need to bring your textbook, paper, and something to write with to class daily.  Please do not wear hats to class as this can impair other students’ view and the instructor's ability to tell how well you are following the lecture.
+\item Please do not hesitate to contact me if you have questions or problems – mathematical or not.  I am in a much better position to offer assistance if I know what is going on in your life.  Do NOT wait until you have fallen behind to begin the process of getting help.  You have my office phone number and my e-mail – use them! 
+\item The instructor’s office hours are as follows: \officeHours, or by appointment.  To ensure that the instructor will be available at a time other than the posted hours, please email or call me at least one day in advance.  I am HAPPY to see (or speak to) students at any time that I can!
+\item Email Etiquette: I will respond to emails as quickly as I am able. Answering mathematical questions over email is problematic and I may request you meet with me instead of writing a long email which may not even answer your question. \textbf{Emails which do not contain a proper greeting (Dear Dr. Hannay,) and signature line (Thank you, YOUR NAME HERE) will be ignored}. 
+\end{enumerate}
+
+\vskip.15in
+\noindent\textbf{Important Dates:}
+These dates are tentative and the instructor retains the right to move the dates, with at least one week of notice to the students. 
+\begin{center} \begin{minipage}{3.8in}
+\begin{flushleft}
+Quiz 1 \dotfill ~ \dquizOne \\
+Quiz 2 \dotfill ~ \dquizTwo \\
+Midterm      \dotfill ~\dmidOne  \\
+Quiz 3 \dotfill ~ \dquizThree \\
+Quiz 4 \dotfill ~ \dquizFour \\
+Project Deadline \dotfill ~\dprojectDue \\
+Final Exam       \dotfill ~\finalDate  \\
+\end{flushleft}
+\end{minipage}
+\end{center}
+
+
+\vskip.15in
+\noindent\textbf{Schreiner University Rules, Policies, and Statements:}
+\begin{enumerate}
+\item Students in the Learning Support Services program should notify the instructor at least 48 hours in advance of a test if the student wishes to take that test in LSS.  A student wishing to take all his/her tests in LSS should notify the instructor at the beginning of the semester so that appropriate arrangements can be made.
+
+\item \textbf{Special Circumstances:}  Schreiner University is committed to ensuring the full participation of all students and is compliant with Section 504 of the Rehabilitation Act of 1973 with respect to providing appropriate academic accommodations to students with qualifying conditions.  Students seeking accommodations should contact Dr. Jude Gallik, the Section 504 Coordinator, by calling 830.792.7258, e-mailing jgallik@schreiner.edu or by stopping by Room 218, Dickey Hall. Professional documentation of the qualifying condition is required for consideration of the request. Students with mobility impairments whose instructor’s office is inaccessible should contact the instructor directly to make alternative arrangements. If such arrangements are unsatisfactory, the student should contact the Section 504 Coordinator. 
+
+\item The instructor is aware that Student Athletes have responsibilities beyond their academic studies that sometimes necessitate missing class.  However, you will be expected to keep up with homework assignments even if you are not in class.  If you need extra help to complete your work on time, please contact the instructor to arrange a meeting before that work is due.  The testing policy as stated in this syllabus does apply to tests missed for extracurricular activities.  \textbf{It is your responsibility to notify the instructor when you will be absent from class. An mass email from a coach is NOT sufficient. }
+
+\item Nontraditional Students are also at risk of missing class due to factors beyond their control.  Policies and procedures do remain in effect as stated above, although the instructor will consider your special circumstances should a situation arise that warrants it.  In no case, however, will any assignment or test be modified or “dropped” in order to accommodate one student.
+
+\item Peer Tutoring is available FREE for this class and many others.  Please contact the Teaching and Learning Center (TLC) for more information, 792-7352.  Establishing an early and lasting relationship with a peer tutor will benefit a student much more than a one-time visit immediately before a test!
+
+\item The Schreiner University Code of Academic Conduct will be rigorously enforced. Academic Dishonesty includes, but may not be limited to, cheating, plagiarism, fabrication, obtaining an unfair advantage, collusion, falsification of records and official documents, and unauthorized access to computerized academic or administrative records or systems. Violations may result in a range of sanctions including academic probation, a grade of F for the course, withdrawal of University funding, or expulsion from the University.The student may appeal a finding of misconduct to Dr. Kiley Miller, Dean of the Trull School of Science and Mathematics. (Please see the Student Handbook for policy details.)
+
+\item No use of tobacco products is allowed in any building on the campus of Schreiner University.  No food or beverage is allowed in any classroom or laboratory. \textbf{No cellular phones are allowed in class}.
+\end{enumerate}
+
+
+\newpage
+
+\centerline{\Large \underline{\textbf{Tentative Course Schedule}}}
+\vspace{5pt}
+\small
+\begin{tabular}{ |p{0.5in}|p{4.0in}|p{1.0in}| }
+\hline
+   \textbf{Date} & \textbf{Topic} & \textbf{Reading}  \\ \hline
+ 1/17 & The geometry of linear equations  &  1.1-2.1 \\ \hline
+1/22 & Elimination with matrices &  2.2-2.3 \\ \hline
+1/24 & Matrix operations and inverses &  2.4-2.5﻿ \\ \hline
+1/29 & LU and LDU factorization &  2.6﻿ \\ \hline
+1/31 & Transposes and permutations &  2.7﻿ \\ \hline
+2/5 & Vector spaces and subspaces &  3.1﻿ \\ \hline
+2/7 & The nullspace: Solving Ax = 0 &  3.2﻿ \\ \hline
+2/12 & Rectangular PA = LU and Ax = b &  3.3 \\ \hline
+2/14 & Row reduced echelon form &  3.3 \\ \hline
+2/19 & Basis and dimension &  3.4 \\ \hline
+2/21 & The four fundamental subspaces &  3.5 \\ \hline
+2/26 & Graphs and networks &  3.5 and 10.1 \\ \hline
+2/28 & Orthogonality &  4.1 \\ \hline
+3/5 & Projections and subspaces &  4.2 \\ \hline
+3/7 & Least squares approximations &  4.3 \\ \hline
+3/19 & Gram-Schmidt and A = QR &  4.4 \\ \hline
+3/21 & In class Midterm &   Covers all material to that point \\ \hline
+\end{tabular}
+
+\newpage
+
+\centerline{\Large \underline{\textbf{Tentative Course Schedule}}}
+\vspace{5pt}
+\small
+\begin{tabular}{ |p{0.5in}|p{4.0in}|p{1.0in}| }
+\hline
+  \textbf{Date} & \textbf{Topic} & \textbf{Reading}  \\ \hline
+ 3/26 & Properties of determinants and formulas &  5.1-5.2 \\ \hline
+3/28 & Applications of determinants &  5.2-5.3 \\ \hline
+4/2 & Eigenvalues and eigenvectors &  6.1 \\ \hline
+4/4 & Diagonalization &  6.2 \\ \hline
+4/9 & Markov matrices &  10.3 \\ \hline
+4/11 & Differential equations &  6.3 \\ \hline
+4/16 & Symmetric matrices &  6.4 \\ \hline
+4/18 & Positive definite matrices and Engineering &  6.5 and 10.2 \\ \hline
+4/23 & Similar matrices &  6.2 \\ \hline
+4/25 & Singular value decomposition &  7.1-7.2 \\ \hline
+4/30 & Fourier series &  10.5, 9.2-9.3 \\ \hline
+5/2 & Linear transformations &  8.1-8.2 \\ \hline
+\end{tabular}
+
+%%%%%% THE END 
+\end{document} 
