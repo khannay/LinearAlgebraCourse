@@ -25,6 +25,7 @@ Symmetric matrices, 6.4
 Positive definite matrices and Engineering, 6.5 and 10.2
 Similar matrices, 6.2
 Singular value decomposition, 7.1-7.2
-Fourier series, FFT, complex matrices, 10.5 and 9.2-9.3
-Linear transformations, 8.1-8.2
+Principal Component Analysis by the SVD, 7.3
+Geometry of the SVD, 7.4
+
 	  	
