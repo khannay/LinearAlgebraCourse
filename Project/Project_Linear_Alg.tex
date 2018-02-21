@@ -1,0 +1,117 @@
+\documentclass[11pt, a4paper]{article}
+%\usepackage{geometry}
+\usepackage[inner=1.5cm,outer=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\usepackage{amsfonts}
+
+%Make ShortHands for quick updates
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\sems}{{Fall 2017}}
+\newcommand{\classNum}{{MATH 2330}}
+\newcommand{\prob}{{\mathbb{P}}}
+
+
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\classNum} }
+\chead{ \fancyplain{}{\sems} }
+\rhead{ \fancyplain{}{Dr. Hannay} }
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+%%%%%%%%%%%% LISTING %%%
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\VerbatimFootnotes % Required, otherwise verbatim does not work in footnotes!
+
+
+
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\Large \textsc{MATH 3312:  Computational Project}}
+\end{center}
+%\date{September 26, 2014}
+
+\begin{center}
+\rule{6.5in}{0.4pt}
+\begin{minipage}[t]{0.90 \textwidth}
+\textbf{Topic:}  Discrete Random Variables \hspace{2.0in} \textbf{Due Date:}  5/8\\
+\end{minipage}
+\rule{6.5in}{0.4pt}
+\end{center}
+\vspace{.5cm}
+\setlength{\unitlength}{1in}
+\renewcommand{\arraystretch}{2}
+
+\section*{Directions:}
+
+
+\section*{Questions:}
+\begin{enumerate}
+\item \underline{Markov Chains:} The fundamental dogma of molecular biology is said to be that DNA is transcribed into RNA and the RNA is used to produce proteins. Proteins are the active form of genes and can be used to catalyze enzymatic reactions within the cell. 
+
+\item \underline{Spectral Clustering:}
+
+
+\item \underline{Image Processing: }
+
+\item \underline{Random Matrices:} We may generate random matrices in Matlab using the command randn(n,n). Find the eigenvalues of a random $1000 \times 1000$ matrix $R$ and make a scatter plot of the eigenvalues in the complex plane. That is plot the real part of each eigenvalue on the x axis and the imaginary part on the y axis. 
+\begin{enumerate}
+\item What shape do the eigenvalues form in the complex plane? 
+\item Does this shape change when you plot a different random matrix?
+\item Generate a random network using the command $N=double(randn(1000,1000)<0.1);$. Make a plot of the eigenvalues of this network? Does this takes the same shape?
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+
+%%%%%% THE END 
+\end{document} 
