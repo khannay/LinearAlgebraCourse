@@ -1,0 +1,203 @@
+\documentclass[10pt, a4paper]{article}
+%\usepackage{geometry}
+\usepackage[inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{placeins}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\VerbatimFootnotes
+
+
+%Set up the headers
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\classNum} }
+\chead{ \fancyplain{}{\topic} }
+\rhead{ \fancyplain{}{Dr. Hannay} }
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+
+%Set up the theorem enviroment
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{defn}[theorem]{\underline{Definition:}}
+
+%Set up custom commands
+\renewcommand\thesection{\Roman{section}.}
+%exercise command \ex{question}{space times 0.5 inches}
+\newcommand{\question}[3]     {
+ #1 (\textbf{#2 points}) \newline 
+\newcount\Scount
+\Scount=0
+\loop\vspace*{0.5in}\par\goodbreak\advance\Scount by 1 \ifnum\Scount< #3 \repeat
+}%Makes an exercise with space left for the students to write the answer
+\newcommand{\makesol}[1]     {
+\newcount\Scount
+\Scount=0
+\loop\vspace*{0.5in}\par\goodbreak\advance\Scount by 1 \ifnum\Scount< #1 \repeat
+}%Makes an exercise with space left for the students to write the answer
+
+\newcommand{\fpquestion}[3]     {
+ #1 (\textbf{#2 points}) \newline 
+\newpage
+}%Makes an exercise with space left for the students to write the answer
+
+%Calculus specific shorthands
+\newcommand{\dlim}{\lim_{h\rightarrow0}}
+
+
+
+%Make ShortHands for quick updates
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\topic}{{Exam IV}}
+\newcommand{\classNum}{{MATH 3324}}
+\newcommand{\prob}{{\mathbb{P}}}
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+
+
+\lstset{
+%language=bash,                          % Code langugage
+basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{gray},              % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{center}
+{\large \textsc{\underline{MATH 3312: Quiz II}}}
+\vspace{0.125in}
+\end{center}
+\underline{Directions:} \\
+Complete this exam without consulting with \underline{anyone} else for help answering the questions (electronically, in person, etc). You may use your notes, the notes on S1 and your textbook. Additionally, you are allowed to use numerical computing software to aid you in answering the questions. \textbf{You must show all of your work. If you use numerical software then write in the command you used. Failure to show all of the steps used to obtain your solution will result in NO points being awarded for that question. } 
+\noindent The quiz must be turned in by the beginning of class on Weds 3/7/2017. If you want to turn it in early make sure you hand it to me in person (don't put it in the box outside my office). Good luck! \\
+\noindent\rule{15cm}{0.4pt}
+
+\vspace{0.25in}
+
+\begin{enumerate}
+\item (5 points) If A and B are invertible $n\times n$ matrices where $A\neq B$ is it true that $A+B$ is invertible? Prove this or give a counterexample.
+\item (10 points) If $A$ and $B$ are symmetric matrices then is $(A+B)^2$ symmetric? Prove that it is true or give a counter example.
+\item (10 points) Find the elimination matrices $E_{21}$ and $E_{32}$ and the $LU$ decomposition for the following matrix:
+\begin{equation}
+A=
+\begin{bmatrix}
+ 1 & 1 & 0 \\
+ 2 & 1 & 0 \\
+ 0 & 4 &6
+\end{bmatrix}
+\end{equation}
+\item (10 points) Let $a$ be any real number then find the rank of the following matrix:
+\begin{equation}
+A=
+\begin{bmatrix}
+ 2a & a & 0 \\
+ -a & 2a & 0 \\
+ a & a &2a+1
+\end{bmatrix}
+\end{equation}
+\item (20 points) Consider the following matrix:
+\begin{equation}
+A=
+\begin{bmatrix}
+ 1 & -2 & -7 \\
+ -2 & 4 & 14 \\
+ 3 & -6 &-21
+\end{bmatrix}
+\end{equation}
+\begin{enumerate}
+\item  For which right hand sides $\langle b_1,b_2,b_3\rangle$ is the following matrix solvable?
+\item Find the nullspace of this matrix
+\end{enumerate}
+\item (15 points) Let $A$ and $B$ be two square ($n \times n$) matrices, then show the column space of $AB$ is a subspace of the column space of $A$. Give an example where the column space of $AB$ is smaller than the column space of $A$. 
+\item (5 points) Show that the matrix $C=\frac{1}{2}(A+A^T)$ is symmetric.
+\item (10 points) Find the nullspace of the following matrix:
+\begin{equation}
+A=
+\begin{bmatrix}
+ 1& 1 & 1  &-3\\
+ -1 & 6 & 1 &1 \\
+\end{bmatrix}
+\end{equation}
+\item (5 points) Give an example of a matrix whose nullspace is given by the plane $x+2y-z=0$
+\item (10 points) Is the set of all $2\times 2$ matrices of the form:
+\begin{equation}
+\begin{bmatrix}
+a & b \\
+b & a \\
+\end{bmatrix}
+\end{equation}
+where $a,b$ can be any real numbers a subspace of the vector space formed by all $2 \times 2 $ matrices? Prove your answer. 
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

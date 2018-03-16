@@ -1,4 +1,4 @@
-function C=image_compression(filename, components=10, show=1)
+function [R1,C]=image_compression(filename, components=10, show=1)
 %Define a function to perform image compression on a given image
 % specified as with the filename
 % C=image_compression(filename, components=10, show=1)
