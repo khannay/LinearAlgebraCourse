@@ -51,27 +51,25 @@
 \definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
 \definecolor{lightlightgray}{gray}{0.93}
 
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
 
 
-\lstset{
-%language=bash,                          % Code langugage
-basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
-keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
-commentstyle=\color{gray},              % Comments font
-numbers=left,                           % Line nums position
-numberstyle=\tiny,                      % Line-numbers fonts
-stepnumber=1,                           % Step between two line-numbers
-numbersep=5pt,                          % How far are line-numbers from code
-backgroundcolor=\color{lightlightgray}, % Choose background color
-frame=none,                             % A frame around the code
-tabsize=2,                              % Default tab size
-captionpos=t,                           % Caption-position = bottom
-breaklines=true,                        % Automatic line breaking?
-breakatwhitespace=false,                % Automatic breaks only at whitespace?
-showspaces=false,                       % Dont make spaces visible
-showtabs=false,                         % Dont make tabls visible
-columns=flexible,                       % Column format
-morekeywords={__global__, __device__},  % CUDA specific keywords
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -93,7 +91,9 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 %\renewcommand{\arraystretch}{2}
 
 \section*{Directions:}
+The below questions require the use of scientific computing software. You will most likely want to use Matlab or Octave for this as I have provided some code for your use in those languages. You should compile all your results and plots in a typed report to be turned in electronically on S1. 
 
+ You are encouraged to use online resources and talk with one another about your projects. However, each person is responsible for writing up their own report. This report should be uploaded to S1 by 11:55 PM on the final class day of the semester 5/4/2018.  
 
 \section*{Questions:}
 \begin{enumerate}
@@ -197,20 +197,33 @@ Using the bird population model above answer the following questions:
 \end{enumerate}
 
 \item \underline{Image Processing: } 
-In this question you will use the \textit{singular value decomposition} to compress an image. I have written a matlab(octave) function to do much of this for you. Download the matlab function image\_compression.m and the image file bird.png. 
+In this question you will use the \textit{singular value decomposition} to compress an image. I have written a matlab(octave) function to do much of this for you. Download the matlab function image\_compression.m and the image file gilbert\_strang.jpg. 
 \begin{enumerate}
-\item Use the image compression function to compress the image by dropping all singular values but the first 1,10,20,50 components. Save the resulting images and turn in your results. 
+\item Use the image compression function to compress the image by dropping all singular values but the first 1,10,20,50 components. Save the resulting images and make a portfolio of these images. 
 \item How many components do we need to include before the loss of information is no longer apparent to the human eye?
 \item Find the svd of the image, and plot the singular values. 
 \item Can you see how the svd can be used to compress the storage required for image files? Hint: Store just the needed singular vectors and values and compute the full image only when required. 
 \end{enumerate}
 
+\item \underline{Random Matrices:} We may generate random matrices in Matlab using the command randn(n) this will create a matrix where each entry is drawn from the standard normal distribution. To make sure the variance of these matrices doesn't grow with the size of the matrix we will study matrices of the form A=randn(n) $\times 1/\sqrt{n}$. 
 
-\item \underline{Random Matrices:} We may generate random matrices in Matlab using the command randn(n,n). Find the eigenvalues of a random $1000 \times 1000$ matrix $R$ and make a scatter plot of the eigenvalues in the complex plane. That is plot the real part of each eigenvalue on the x axis and the imaginary part on the y axis. 
+It turns out that matrices with random entries have some very predictable properties when we consider the \textit{spectrum} (the eigenvalues) of the matrix. The below matlab code creates a random 1000 by 1000 matrix and plots the eigenvalues in the complex plane (real part on the x-axis and imaginary part on the y axis). 
+
+\lstinputlisting{random_matrix_demo.m}
+
 \begin{enumerate}
-\item What shape do the eigenvalues form in the complex plane? 
-\item Does this shape change when you plot a different random matrix?
-\item Generate a random network using the command $N=double(randn(1000,1000)<0.1);$. Make a plot of the eigenvalues of this network? Does the spectrum of this matrix take the same shape?
+\item What shape do the eigenvalues form in the complex plane? How does this depend on the size of the random matrix? Try N=10,20,50,100,500,1000 and include these plots in your report.  What happens as the size of the matrices increases?
+\item Generate a random network using the command:
+\begin{lstlisting}
+N=double(abs(randn(1000))<0.1);
+\end{lstlisting}
+\item How many edges are in this random network?
+\item Make a plot of the eigenvalues of this network in the complex plane. Does the spectrum of this matrix take the same shape?
+\item Plot the spectrum when you change the matrix to:
+\begin{lstlisting}
+N2=double(abs(randn(1000))<0.01);
+\end{lstlisting}
+\item How many edges are in your N2 network? What can you conclude about random networks following the rule you found above?
 \end{enumerate}
 
 %\item \underline{Perturbation Theory for Matrices:}

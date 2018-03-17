@@ -18,6 +18,7 @@ if (length(size(R))==3)
  else
   R1=R;
  end
+ dimensions=size(R1)
   
 [U,S,V]=svd(R1);
 num=components;
