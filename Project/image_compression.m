@@ -44,5 +44,9 @@ if (show==1)
   title('SVD Image')
 end
 
+%Print the compression ratio
+mydim=size(R);
+compress_percentage=100*(sum(size(R))*components)/(mydim(1)*mydim(2)) 
+
 endfunction
 
