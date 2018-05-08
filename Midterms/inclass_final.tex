@@ -1,0 +1,242 @@
+\documentclass[12pt, a4paper]{article}
+%\usepackage{geometry}
+\usepackage[inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{placeins}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\VerbatimFootnotes
+
+%For using units 
+\usepackage{siunitx}
+
+%Packages for drawing triangles
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+%Packages to add highlighting
+\usepackage{xcolor}
+\usepackage{soul}
+
+
+%Set up the headers
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\classNum} }
+\chead{ \fancyplain{}{\topic} }
+\rhead{ \fancyplain{}{Dr. Hannay} }
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+
+%Set up the theorem enviroment
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{defn}[theorem]{\underline{Definition:}}
+
+%Set up custom commands
+\renewcommand\thesection{\Roman{section}.}
+%exercise command \ex{question}{space times 0.5 inches}
+\newcommand{\question}[3]     {
+ #1 (\textbf{#2 points}) \newline 
+\newcount\Scount
+\Scount=0
+\loop\vspace*{0.5in}\par\goodbreak\advance\Scount by 1 \ifnum\Scount< #3 \repeat
+}%Makes an exercise with space left for the students to write the answer
+\newcommand{\makesol}[1]     {
+\newcount\Scount
+\Scount=0
+\loop\vspace*{0.5in}\par\goodbreak\advance\Scount by 1 \ifnum\Scount< #1 \repeat
+}%Makes an exercise with space left for the students to write the answer
+
+\newcommand{\fpquestion}[3]     {
+ #1 (\textbf{#2 points}) \newline 
+\newpage
+}%Makes an exercise with space left for the students to write the answer
+
+%Calculus specific shorthands
+\newcommand{\dlim}{\lim_{h\rightarrow0}}
+\newcommand{\myint}{\displaystyle \int}
+
+%Exams only option for math displays
+\everymath{\displaystyle}
+
+%Make ShortHands for quick updates
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\topic}{{Final}}
+\newcommand{\classNum}{{MATH 3312}}
+\newcommand{\prob}{{\mathbb{P}}}
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{flushleft}
+\Large \textbf{Name: } \underline{\hspace{8cm}} \\
+\end{flushleft}
+\vspace{0.25in}
+\begin{center}
+{\Large \textsc{\underline{MATH 3312: Final Exam}}}
+\vspace{0.125in}
+\end{center}
+Some of these questions may look familiar from previous work. However, be wary because they \textbf{may have changed slightly}. You may have your textbook and (1) notebook of notes. \underline{No calculators are allowed!}
+\section{True/False Questions}
+Are the following statements true or false? Each question is worth 2 points. 
+\begin{enumerate}
+\item \underline{\hspace{1cm}} If a matrix is invertible it must also be diagonalizable. 
+\item \underline{\hspace{1cm}}  If $A$ is an $m\times n$ matrix of rank $r=n<m$ then $Ax=b$ has infinite solutions for any $b$. 
+\item \underline{\hspace{1cm}} A projection matrix $P$ has all zeros and ones as eigenvalues. 
+\item \underline{\hspace{1cm}} Let $v$ be in the row space of $A$ and $n$ be in the nullspace of $A$. Then $v \cdot n=\langle v | n \rangle=0$
+\item \underline{\hspace{1cm}} A set of distinct vectors $v_1, v_2, v_3, v_4$ can form a basis for $\mathbb{R}^3$. 
+\item \underline{\hspace{1cm}} If $R$ is the reduced row echelon form of the matrix $A$ then $C(A)=C(R)$. 
+\item  \underline{\hspace{1cm}} If $A$ is an $m \times n$ matrix then the dimension of the row space must be less than $n$. 
+\item  \underline{\hspace{1cm}} A linear system $Ax=b$ must have either zero, one or infinite solutions. 
+\item  \underline{\hspace{1cm}} If a matrix has ONLY $\vec{0}$ in its nullspace then it is invertible.
+\item  \underline{\hspace{1cm}} The matrix $
+\begin{bmatrix}
+-2 & 1 \\
+1 & 3 \\
+\end{bmatrix}$
+has real eigenvalues.
+\end{enumerate}
+\newpage
+
+
+\section{Questions}
+\begin{enumerate}
+\item (10  points) Solve the following system for $\vec{x}=\langle x_1,x_2,x_3 \rangle$
+\begin{equation}
+\begin{bmatrix}
+1 & 3 &4  \\
+1 & 0 & 1 \\
+0 & 0 & 2 \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2 \\
+x_3 
+\end{bmatrix}=
+\begin{bmatrix}
+6 \\
+3 \\
+4
+\end{bmatrix} \nonumber
+\end{equation} 
+%Ans=[1,-1,2]
+\newpage
+\item (10 points)  Find the eigenvalues and eigenvectors for the following matrix:
+\begin{equation}
+\begin{bmatrix}
+1 & 0 \\
+4 & -1
+\end{bmatrix}
+\nonumber
+\end{equation}
+%Ans -1, 1 [0,1], v2=[1,2]
+\newpage
+
+\item (10 points) Find the least squares solution to the following system:
+\begin{equation}
+\begin{bmatrix}
+1 & 1 \\ 
+2 & 4 \\
+0 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+x_3 
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+1 \\
+1 
+\end{bmatrix} \nonumber
+\end{equation}
+%Ans=[1.5, -0.5]
+\newpage
+
+\item (10 points) Find the dimensions of the \textbf{four fundamental subspaces} for the following matrix.
+%Change Numbers
+\begin{equation}
+A=\begin{bmatrix}
+3 & 4 &-1&0 & 0\\
+0 & 1 & 0 & 1 & 0\\
+6 & 8 &-2 &1& 0 \\
+\end{bmatrix} \nonumber
+\end{equation}
+\newpage
+
+\item (10 points)  Is the following set of vectors a basis for $\mathbb{R}^3$? Why or why not? Show your work. 
+\begin{align}
+& v_1=\begin{bmatrix} 1 \\ -1 \\ 1 \end{bmatrix}, \qquad v_2=\begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} , \qquad v_3=\begin{bmatrix} -1 \\ -5\\-5 \end{bmatrix} \nonumber
+\end{align}
+%Ans. No [1,-2,1] is in the nullspace of this matrix
+\newpage
+
+\item (10 points) What are the \textbf{\underline{eigenvalues}}  of the following matrix? 
+\begin{equation}
+A=
+\begin{bmatrix}
+1 & 2 & 3 \\
+0  & 3 & 4 \\
+0 & 0 & 10 
+\end{bmatrix} \nonumber
+\end{equation}
+\textit{Hint: I haven't broken my promise. This can be done without any computation at all. }
+\newpage
+
+\item (10 points) Find a basis for the nullspace of the following matrix:
+\begin{equation}
+A=
+\begin{bmatrix}
+2 & 0 & -1 \\
+-2 & 1 & 4 \\
+4& 0 & -2  
+\end{bmatrix} \nonumber
+\end{equation}
+%Ans[1/2, -3.0,1]
+\newpage
+
+\item (10 points) Prove that if $\vec{x} \in \mathbb{R}^n$ and $\vec{y}\in \mathbb{R}^n$ are orthogonal vectors (i.e $\vec{x} \cdot \vec{y}=0$) and $Q$ is an $n \times n$ orthonormal matrix then  $(Q\vec{x}) \cdot (Q\vec{y})=0$. 
+\newpage
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+\end{document}
