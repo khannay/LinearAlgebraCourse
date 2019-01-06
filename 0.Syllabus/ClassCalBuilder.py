@@ -6,11 +6,11 @@ class MakeSyllabusTable:
 
     def __init__(self, excludedDatesFileName, classInfo=None):
 
-        self.year=2018
+        self.year=2019
         self.homework=False
-        self.classStartDate=(1,17) #month/year
-        self.classEndDate=(5,4)
-        self.SevenDay=[True,False,True,False,False, False, False] #M-Sunday meet true or false
+        self.classStartDate=(1,14) #month/year
+        self.classEndDate=(5,8)
+        self.SevenDay=[True,False,True,False,True, False, False] #M-Sunday meet true or false
         self.excludedDates=self.loadExcludedDates(excludedDatesFileName)
         #self.info=info
 

@@ -27,5 +27,5 @@ Similar matrices, 6.2
 Singular value decomposition, 7.1-7.2
 Principal Component Analysis by the SVD, 7.3
 Geometry of the SVD, 7.4
-
+Review, NA
 	  	
