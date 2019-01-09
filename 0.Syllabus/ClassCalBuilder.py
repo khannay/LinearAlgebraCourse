@@ -9,7 +9,7 @@ class MakeSyllabusTable:
         self.year=2019
         self.homework=False
         self.classStartDate=(1,14) #month/year
-        self.classEndDate=(5,8)
+        self.classEndDate=(5,1)
         self.SevenDay=[True,False,True,False,True, False, False] #M-Sunday meet true or false
         self.excludedDates=self.loadExcludedDates(excludedDatesFileName)
         #self.info=info

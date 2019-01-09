@@ -110,7 +110,7 @@ x^0=
 15
 \end{bmatrix}^T
 \end{equation}
-This tells us there are 100 birds which are age 1 (hatched this year), 65 birds which are year 2, etc. Lets use the superscript to indicate how many years have elapsed (so we start with $x^0$ to indicate that is the starting value). This bird species is classified as endangered as we only have $238$ total birds in the population. 
+This tells us there are 100 birds which are age 1 (hatched this year), 65 birds which are year 2, etc. Lets use the superscript to indicate how many years have elapsed (so we start with $x^0$ to indicate that is the starting value). This bird species is classified as endangered as we only have $258$ total birds in the population. 
 
 Now we may want to take this data in predict the population in future years. The diagram below shows a graphical version of our model. 
 \begin{center}
@@ -188,9 +188,21 @@ s_1 & 0 &0 &0 &0 \\
 Using the bird population model above answer the following questions:
 
 \begin{enumerate}
-\item If $b_3=b_4=2$ and $s_1=0.20$, $s_2=0.50$ and $s_3=s_4=0.80$ and $x^0$ is as given above, make a graph of the total population (sum of the vector) as a function of time. What happens to the total bird population? 
-\item For the same parameter values as the first question does it matter what the initial population $x_0$ is? Do all initial conditions lead to the same final state for the total population?
-\item Lets say that a conservation program is put in to place for this bird species, designed to increase the survival of the first year birds. Under this conservation program $s_1=0.50$, with all the other parameters being the same. If we start at the $x^0$ given above what happens to the bird population now over the long term? Make a graph of the total population for the first 20 years.
+\item If $b_3=b_4=2$ and $s_1=0.20$, $s_2=0.50$ and $s_3=s_4=0.80$ and $x^0$ is as given above, make a graph of the total population (sum of the vector) as a function of time. What happens to the total bird population? \\
+The below code will save the population at each time point and make a bar plot of the total population:
+\begin{lstlisting}
+pop=zeros(15,1);
+for i=1:15; pop(i)=sum(L^(i-1)*x0); end;
+bar(0:14, pop)
+\end{lstlisting}
+Where $L$ is the $5 \times 5$ Leslie matrix as given above and $x0$ is a column vector of the starting conditions. 
+\item For the same parameter values as the first question does it matter what the initial population $x_0$ is? Do all initial conditions lead to the same final state for the total population? Hint: what are the eigenvalues for this matrix?
+\item Lets say that a conservation program is put in to place for this bird species, designed to increase the survival of the first year birds. Under this conservation program $s_1=0.60$, with all the other parameters being the same. If we start at the $x^0$ given above what happens to the bird population now over the long term? Make a graph of the total population for the first 20 years.
+\begin{lstlisting}
+pop=zeros(20,1);
+for i=1:20; pop(i)=sum(L2^(i-1)*x0); end;
+bar(0:19, pop)
+\end{lstlisting}
 \item For the conservation program can you find a initial condition where we start with 258 birds (just like the $x^0$ above) where the birds go extinct? What does this tell you about just using the total population as a measure of the health of a population?
 \item Let's say the government cuts the funding for the conservation program after 10 years (starting from $x^0$ above ) because the bird population has recovered enough to no longer be endangered. When the funding is cut $s_1$ drops back to 0.20 again. What will happen to the total bird population over the next ten years after the funding is cut? What lesson can you learn from this simulation? 
 \item What is the minimum value of the $0 \leq s_1 \leq 1$ parameter where the bird population will grow over time? 
@@ -198,10 +210,21 @@ Using the bird population model above answer the following questions:
 
 \item \underline{Image Processing: } 
 In this question you will use the \textit{singular value decomposition} to compress an image. I have written a matlab(octave) function to do much of this for you. Download the matlab function image\_compression.m and the image file gilbert\_strang.jpg. 
+
+You will need to download the matlab files (and unzip them) for the project and change the directory in matlab/octave to the folder you extracted the zip file to. You will now be able to use the function image\_compression
+
 \begin{enumerate}
 \item Use the image compression function to compress the image by dropping all singular values but the first 1,10,20,50 components. Save the resulting images and make a portfolio of these images. 
+Here is an example of doing this for 10 components:
+\begin{lstlisting}
+image_compression('gilbert_strang.jpg', 10);
+\end{lstlisting}
 \item How many components do we need to include before the loss of information is no longer apparent to the human eye?
 \item Find the svd of the image, and plot the singular values. 
+\begin{lstlisting}
+[R1,C]=image_compression('gilbert_strang.jpg', 10);
+bar(svd(R1)) %this will make a bar plot of the singular values
+\end{lstlisting}
 \item Can you see how the svd can be used to compress the storage required for image files? Hint: Store just the needed singular vectors and values and compute the full image only when required. 
 \end{enumerate}
 
@@ -217,8 +240,8 @@ It turns out that matrices with random entries have some very predictable proper
 \begin{lstlisting}
 N=double(abs(randn(1000))<0.1);
 \end{lstlisting}
-\item How many edges are in this random network? 
-\item What are the average number of edges per node?
+\item How many edges are in this random network? (each one in the matrix N is an edge)
+\item What are the average number of edges per node? 
 \item Make a plot of the eigenvalues of this network in the complex plane. Does the spectrum of this matrix take the same shape?
 \item Plot the spectrum when you change the matrix to:
 \begin{lstlisting}
