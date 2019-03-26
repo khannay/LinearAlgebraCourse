@@ -215,30 +215,26 @@ bar(0:19, pop)
 \end{enumerate}
 
 \item \underline{Image Processing: } 
-In this question you will use the \textit{singular value decomposition} to compress an image. I have written a matlab(octave) function to do much of this for you. Download the matlab function image\_compression.m and the image file gilbert\_strang.jpg. 
+In this question you will use the \textit{singular value decomposition} to compress an image. I have written a julia notebook to do much of this for you. Open this notebook in JuliaBox and download the strang.png file from Canvas an upload this to your JuliaBox account. 
 
-You will need to download the matlab files (and unzip them) for the project and change the directory in matlab/octave to the folder you extracted the zip file to. You will now be able to use the function image\_compression
 
 \begin{enumerate}
-\item Use the image compression function to compress the image by dropping all singular values but the first 1,10,20,50 components. Save the resulting images and make a portfolio of these images. 
-Here is an example of doing this for 10 components:
-\begin{lstlisting}
-image_compression('gilbert_strang.jpg', 10);
-\end{lstlisting}
+\item Use the rank\_approx function to compress the image by dropping all singular values but the first 1,10,20,50 components. Make a portfolio of these images. 
 \item How many components do we need to include before the loss of information is no longer apparent to the human eye?
 \item Find the svd of the image, and plot the singular values. 
 \begin{lstlisting}
-[R1,C]=image_compression('gilbert_strang.jpg', 10);
-bar(svd(R1)) %this will make a bar plot of the singular values
+using Plots, LinearAlgebra
+myImageSVD=svdvalues(YOURIMAGE)
+bar(myImageSVD) %this will make a bar plot of the singular values
 \end{lstlisting}
 \item Can you see how the svd can be used to compress the storage required for image files? Hint: Store just the needed singular vectors and values and compute the full image only when required. 
 \end{enumerate}
 
-\item \underline{Random Matrices:} We may generate random matrices in Matlab using the command randn(n) this will create a matrix where each entry is drawn from the standard normal distribution. To make sure the variance of these matrices doesn't grow with the size of the matrix we will study matrices of the form A=randn(n) $\times 1/\sqrt{n}$. 
+\item \underline{Random Matrices:} We may generate random matrices in Julia using the command randn(n,n) this will create an $n \times n$ matrix where each entry is drawn from the standard normal distribution. To make sure the variance of these matrices doesn't grow with the size of the matrix we will study matrices of the form A=randn(n,n) $\times 1/\sqrt{n}$. 
 
-It turns out that matrices with random entries have some very predictable properties when we consider the \textit{spectrum} (the eigenvalues) of the matrix. The below matlab code creates a random 1000 by 1000 matrix and plots the eigenvalues in the complex plane (real part on the x-axis and imaginary part on the y axis). 
+It turns out that matrices with random entries have some very predictable properties when we consider the \textit{spectrum} (the eigenvalues) of the matrix. The below Julia code creates a random 1000 by 1000 matrix and plots the eigenvalues in the complex plane (real part on the x-axis and imaginary part on the y axis). 
 
-\lstinputlisting{random_matrix_demo.m}
+\lstinputlisting{random_matrix_spectrum.jl}
 
 \begin{enumerate}
 \item What shape do the eigenvalues form in the complex plane? How does this depend on the size of the random matrix? Try N=10,20,50,100,500,1000 and include these plots in your report.  What happens as the size of the matrices increases?
