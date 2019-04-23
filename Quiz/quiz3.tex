@@ -114,8 +114,8 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \vspace{0.125in}
 \end{center}
 \underline{Directions:} \\
-Complete this exam without consulting with \underline{anyone} else for help answering the questions (electronically, in person, etc). You may use your notes, the notes on S1 and your textbook. Additionally, you are allowed to use numerical computing software to aid you in answering the questions. \textbf{You must show all of your work. If you use numerical software then write in the command you used. Failure to show all of the steps used to obtain your solution will result in NO points being awarded for that question. } 
-\noindent The quiz must be turned in by the beginning of class on Weds 4/18/2017. If you want to turn it in early make sure you hand it to me in person (don't put it in the box outside my office). Good luck! \\
+Complete this exam without consulting with \underline{anyone} else for help answering the questions (electronically, in person, etc). You may use your notes, the notes on Canvas and your textbook. Additionally, you are allowed to use numerical computing software to aid you in answering the questions. \textbf{You must show all of your work. If you use numerical software then write in the command you used. Failure to show all of the steps used to obtain your solution will result in NO points being awarded for that question. } 
+\noindent The quiz must be turned in by the beginning of class on Weds 4/15/2019. If you want to turn it in early make sure you hand it to me in person (don't put it in the box outside my office). Good luck! \\
 \noindent\rule{15cm}{0.4pt}
 
 \vspace{0.25in}
@@ -131,19 +131,19 @@ A=
 \nonumber
 \end{equation}
 
-Answer: The rref of the matrix is 
-\begin{equation}
-R=
-\begin{bmatrix}
-1 & 0 & 1 &4 \\
-0 &1& 1 &0
-\end{bmatrix}
-\nonumber
-\end{equation}
-Thus as basis for this nullspace is:
-\begin{align}
-n_1=\begin{bmatrix} -1 \\ -1 \\1 \\ 0\end{bmatrix} \qquad n_2=\begin{bmatrix} -4\\ 0 \\ 0 \\ 1 \end{bmatrix} 
-\end{align}
+%Answer: The rref of the matrix is 
+%\begin{equation}
+%R=
+%\begin{bmatrix}
+%1 & 0 & 1 &4 \\
+%0 &1& 1 &0
+%\end{bmatrix}
+%\nonumber
+%\end{equation}
+%Thus as basis for this nullspace is:
+%\begin{align}
+%n_1=\begin{bmatrix} -1 \\ -1 \\1 \\ 0\end{bmatrix} \qquad n_2=\begin{bmatrix} -4\\ 0 \\ 0 \\ 1 \end{bmatrix} 
+%\end{align}
 
 
 
@@ -151,16 +151,16 @@ n_1=\begin{bmatrix} -1 \\ -1 \\1 \\ 0\end{bmatrix} \qquad n_2=\begin{bmatrix} -4
 
 
 \item Create a matrix $A$ where the nullspace $N(A)$ is all combinations of $\vec{n}=\langle 1, 2 \rangle$.
-Ans: We need a matrix where $An=0$ and this is the only non-zero element of the nullspace. 
-\begin{equation}
-A=
-\begin{bmatrix}
-2 & -1  \\
-2 &-1
-\end{bmatrix}
-\nonumber
-\end{equation}
-Here $An=0$ and the nullspace is one dimensional. 
+%Ans: We need a matrix where $An=0$ and this is the only non-zero element of the nullspace. 
+%\begin{equation}
+%A=
+%\begin{bmatrix}
+%2 & -1  \\
+%2 &-1
+%\end{bmatrix}
+%\nonumber
+%\end{equation}
+%Here $An=0$ and the nullspace is one dimensional. 
 
 
 
@@ -174,13 +174,13 @@ A=
 -4 & 0 &-4 & -2 & 0
 \end{bmatrix}
 \end{equation}
-Ans: The rank of this matrix is $r=2$, it is $4 \times 5$ so:
-\begin{itemize}
-\item $dim(C(A))=2$
-\item $dim(C(A^T))=2$
-\item $dim(N(A))=5-2=3$
-\item $dim(N(A^T))=4-2=2$
-\end{itemize}
+%Ans: The rank of this matrix is $r=2$, it is $4 \times 5$ so:
+%\begin{itemize}
+%\item $dim(C(A))=2$
+%\item $dim(C(A^T))=2$
+%\item $dim(N(A))=5-2=3$
+%\item $dim(N(A^T))=4-2=2$
+%\end{itemize}
 
 
 
@@ -189,8 +189,8 @@ Ans: The rank of this matrix is $r=2$, it is $4 \times 5$ so:
 
 
 \item If $AB=0$ then the columns of $B$ are the \underline{\hspace{1cm}} of $A$. The rows of $A$ are in the  \underline{\hspace{1cm}} of $B$. If $AB=0$ explain why it is not possible for $A$ and $B$ to be $3 \times 3$ matrices of rank 2. \\ \\
-Ans: First blank is nullspace, second blank is the left null space. \\
-If $A$ and $B$ are 3 by 3 with rank 2, then they each have two independent rows/cols. Thus, if $AB=0$ the the columns of $B$ are in the nullspace of $A$. Since $B$ has rank 2 the dimension of the nullspace is at least 2. But $dim(C(A^T))+dim(N(A))=2+2>3$. Contradiction. You could also just cite the 1st fundamental theorem of linear algebra. 
+%Ans: First blank is nullspace, second blank is the left null space. \\
+%If $A$ and $B$ are 3 by 3 with rank 2, then they each have two independent rows/cols. Thus, if $AB=0$ the the columns of $B$ are in the nullspace of $A$. Since $B$ has rank 2 the dimension of the nullspace is at least 2. But $dim(C(A^T))+dim(N(A))=2+2>3$. Contradiction. You could also just cite the 1st fundamental theorem of linear algebra. 
 
 
 
@@ -199,75 +199,75 @@ If $A$ and $B$ are 3 by 3 with rank 2, then they each have two independent rows/
 
 
 \item Is it true that the product $A^TA$ has the same nullspace as $A$? Prove your answer (show for general matrices) or find a counterexample. \\
-\begin{proof}
-Let $n \in N(A)$ thus by definition $An=\vec{0}$, therefore $A^TAn=A^T\vec{0}=\vec{0}.$ Thus $N(A^TA) \subseteq N(A)$. \\
-Now let $n \in N(A^TA)$ thus by definition $A^TAn=\vec{0}$, thus $n^TA^TA^n=n^T\vec{0}=0$. Thus $(An)^T An=0$ or $||An||^2=0$, $\implies An=\vec{0}$ which tells us $n \in N(A)$. Thus $N(A^TA) \subseteq N(A)$. 
-
-Taken together we have that $N(A)=N(A^TA)$. 
-\end{proof}
-\item Find the least squares solution for the best fit line for the points $(0,1), (1,3), (2,6),(3,9),(4,10)$.  \\
-Ans:
-First we set up the system as:
-\begin{equation}
-\begin{bmatrix}
-1 & 0 \\
-1 & 1 \\
-1& 2 \\
-1 & 3 \\
-1 & 4 \\
-\end{bmatrix}
-\begin{bmatrix}
-C \\
-D
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 \\
-3 \\
-6 \\
-9 \\
-10
-\end{bmatrix}
-\end{equation}
-or $A\hat{x}=b$. 
-\begin{equation}
-A^TA=
-\begin{bmatrix}
-5&10\\
-10&30
-\end{bmatrix}
-\end{equation}
-The RHS is:
-\begin{equation}
-A^Tb=
-\begin{bmatrix}
-29 \\
-82
-\end{bmatrix}
-\end{equation}
-Now we solve the $2 \times 2$ system for $C$ and $D$. Finding that:
-\begin{itemize}
-\item y intercept is $1$
-\item slope is 2.4
-\end{itemize}
+%\begin{proof}
+%Let $n \in N(A)$ thus by definition $An=\vec{0}$, therefore $A^TAn=A^T\vec{0}=\vec{0}.$ Thus $N(A^TA) \subseteq N(A)$. \\
+%Now let $n \in N(A^TA)$ thus by definition $A^TAn=\vec{0}$, thus $n^TA^TA^n=n^T\vec{0}=0$. Thus $(An)^T An=0$ or $||An||^2=0$, $\implies An=\vec{0}$ which tells us $n \in N(A)$. Thus $N(A^TA) \subseteq N(A)$. 
+%
+%Taken together we have that $N(A)=N(A^TA)$. 
+%\end{proof}
+%\item Find the least squares solution for the best fit line for the points $(0,1), (1,3), (2,6),(3,9),(4,10)$.  \\
+%Ans:
+%First we set up the system as:
+%\begin{equation}
+%\begin{bmatrix}
+%1 & 0 \\
+%1 & 1 \\
+%1& 2 \\
+%1 & 3 \\
+%1 & 4 \\
+%\end{bmatrix}
+%\begin{bmatrix}
+%C \\
+%D
+%\end{bmatrix}
+%=
+%\begin{bmatrix}
+%1 \\
+%3 \\
+%6 \\
+%9 \\
+%10
+%\end{bmatrix}
+%\end{equation}
+%or $A\hat{x}=b$. 
+%\begin{equation}
+%A^TA=
+%\begin{bmatrix}
+%5&10\\
+%10&30
+%\end{bmatrix}
+%\end{equation}
+%The RHS is:
+%\begin{equation}
+%A^Tb=
+%\begin{bmatrix}
+%29 \\
+%82
+%\end{bmatrix}
+%\end{equation}
+%Now we solve the $2 \times 2$ system for $C$ and $D$. Finding that:
+%\begin{itemize}
+%\item y intercept is $1$
+%\item slope is 2.4
+%\end{itemize}
 
 
 
 \item Find the projection of the vector $\vec{b}=\langle 1,2,3 \rangle$ onto the space spanned by $\vec{a}=\langle 1,1,-1 \rangle$. Show that the error vector is orthogonal to $\vec{a}$. \\
-Ans: The projection operator is given by $$P_a=\frac{|a><a|}{||a||^2}.$$ Thus $P_a |b>=<0,0,0>$. This makes the error vector $e=b$ and $<b|a>=0$. So the error is orthogonal to $a$. 
+%Ans: The projection operator is given by $$P_a=\frac{|a><a|}{||a||^2}.$$ Thus $P_a |b>=<0,0,0>$. This makes the error vector $e=b$ and $<b|a>=0$. So the error is orthogonal to $a$. 
 
 
 
 
 
 \item Let $P$ be a $n \times n$ projection matrix. Show that the nullspace of the complementary projection matrix $P_c=\mathbb{I}-P$ is the column space of $P$. 
-
-\begin{proof}
-\begin{enumerate}
-\item First let $x \in C(P)$ then $Pb=x$ for some $b$ by definition of the column space. Thus $PPb=Px$, but $P^2=P$ for a projection so we have $Pb=Px$ and $Pb=x$ so we have $x=Px$, which tells us that $x-Px=0$ or $(I-P)x=0$, $\implies x \in N(P_c)$.
-\item Let $x \in N(P_c)$ then $P_cx=0$ thus $(I-P)x=0$ which tells us that $Px=x$ thus $x$ can be produced by some combination of the columns of $P$. Thus $x\in C(P)$ by defintion. 
-\end{enumerate}
-\end{proof}
+%
+%\begin{proof}
+%\begin{enumerate}
+%\item First let $x \in C(P)$ then $Pb=x$ for some $b$ by definition of the column space. Thus $PPb=Px$, but $P^2=P$ for a projection so we have $Pb=Px$ and $Pb=x$ so we have $x=Px$, which tells us that $x-Px=0$ or $(I-P)x=0$, $\implies x \in N(P_c)$.
+%\item Let $x \in N(P_c)$ then $P_cx=0$ thus $(I-P)x=0$ which tells us that $Px=x$ thus $x$ can be produced by some combination of the columns of $P$. Thus $x\in C(P)$ by defintion. 
+%\end{enumerate}
+%\end{proof}
 
 
 \item Find the \underline{complete solution} to the following system:
@@ -290,15 +290,15 @@ $$
 
 
 
-Answer: The $x_p$ here is $$x_p=\begin{bmatrix} -6 \\15\\ 0 \end{bmatrix}.$$ The rref of this augmented matrix is 
-\begin{equation}
-R=
-\begin{bmatrix}
-1&0&-1&-6\\
-0&1&3&15
-\end{bmatrix}
-\end{equation}
-Thus the nullspace is spanned by $$x_n=\begin{bmatrix} 1\\-3\\1 \end{bmatrix}.$$So the complete solution is $x=x_p+c x_n$ for any $c \in \mathbb{R}$. 
+%Answer: The $x_p$ here is $$x_p=\begin{bmatrix} -6 \\15\\ 0 \end{bmatrix}.$$ The rref of this augmented matrix is 
+%\begin{equation}
+%R=
+%\begin{bmatrix}
+%1&0&-1&-6\\
+%0&1&3&15
+%\end{bmatrix}
+%\end{equation}
+%Thus the nullspace is spanned by $$x_n=\begin{bmatrix} 1\\-3\\1 \end{bmatrix}.$$So the complete solution is $x=x_p+c x_n$ for any $c \in \mathbb{R}$. 
 
 
 
@@ -309,7 +309,7 @@ Thus the nullspace is spanned by $$x_n=\begin{bmatrix} 1\\-3\\1 \end{bmatrix}.$$
 \begin{align}
 v_1=\begin{bmatrix} 1 \\ 0 \\1 \end{bmatrix} \qquad v_2=\begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} \qquad v_3=\begin{bmatrix} 6 \\ -12\\ 4 \end{bmatrix}
 \end{align}
-Ans: Yes. The rref of this set of vectors is the identity so they are independent and since we have three vectors in $\mathbb{R}^3$ this is a basis. 
+%Ans: Yes. The rref of this set of vectors is the identity so they are independent and since we have three vectors in $\mathbb{R}^3$ this is a basis. 
 
 \end{enumerate}
 

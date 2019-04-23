@@ -215,7 +215,7 @@ bar(0:19, pop)
 \end{enumerate}
 
 \item \underline{Image Processing: } 
-In this question you will use the \textit{singular value decomposition} to compress an image. I have written a julia notebook to do much of this for you. Open this notebook in JuliaBox and download the strang.png file from Canvas an upload this to your JuliaBox account. 
+In this question you will use the \textit{singular value decomposition} to compress an image. I have written a julia notebook to do much of this for you. Open this notebook in JuliaBox and download the strang.png file from Canvas and upload this to your JuliaBox account. 
 
 
 \begin{enumerate}
@@ -238,19 +238,6 @@ It turns out that matrices with random entries have some very predictable proper
 
 \begin{enumerate}
 \item What shape do the eigenvalues form in the complex plane? How does this depend on the size of the random matrix? Try N=10,20,50,100,500,1000 and include these plots in your report.  What happens as the size of the matrices increases?
-\item Generate a random adjacency matrix for a network using the command:
-\begin{lstlisting}
-N=double(abs(randn(1000))<0.1);
-\end{lstlisting}
-\item How many edges are in this random network? (each one in the matrix N is an edge)
-\item What are the average number of edges per node? 
-\item Make a plot of the eigenvalues of this network in the complex plane. Does the spectrum of this matrix take the same shape?
-\item Plot the spectrum when you change the matrix to:
-\begin{lstlisting}
-N2=double(abs(randn(1000))<0.01);
-\end{lstlisting}
-\item How many edges are in your N2 network? 
-\item What can you conclude about random networks following the rule you found above?
 \end{enumerate}
 
 %\item \underline{Perturbation Theory for Matrices:}
