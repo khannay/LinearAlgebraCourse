@@ -4,39 +4,26 @@ Elimination Basics, 2.2
 Elimination with matrices, 2.2-2.3
 Matrix operations, 2.4-2.5﻿
 Matrix operations, 2.4-2.5﻿
-Matrix operations, 2.4-2.5﻿
 Matrix Inverses, 2.5
 Matrix Inverses, 2.5
 LU and LDU factorization, 2.6﻿
-LU and LDU factorization, 2.6﻿
-Transposes and permutations, 2.7﻿
 Transposes and permutations, 2.7﻿
 Transposes and permutations, 2.7﻿
 Vector spaces and subspaces, 3.1﻿
-Vector spaces and subspaces, 3.1﻿
 The nullspace: Solving Ax = 0, 3.2﻿
 The nullspace: Solving Ax = 0, 3.2﻿
-The nullspace: Solving Ax = 0, 3.2﻿
-Complete Solution to Ax=b, 3.3
-Complete Solution to Ax=b, 3.3
-Independence, Basis and dimension, 3.4
-Independence, Basis and dimension, 3.4
-The four fundamental subspaces, 3.5
 Review for Midterm, NA
 In class Midterm,  Covers all material to that point
-Orthogonality, 4.1
-Orthogonality, 4.1
-Projections and subspaces, 4.2
+Complete Solution to Ax=b, 3.3
+Complete Solution to Ax=b, 3.3
+Independence Basis and dimension, 3.4
+Independence Basis and dimension, 3.4
+The four fundamental subspaces, 3.5
+Orthogonality of the Four Spaces, 4.1
 Projections and subspaces, 4.2
 Least squares approximations, 4.3
-Least squares approximations, 4.3
-Gram-Schmidt and A = QR, 4.4
 Gram-Schmidt and A = QR, 4.4
 Eigenvalues and eigenvectors, 6.1
 Eigenvalues and eigenvectors, 6.1
-Eigenvalues and eigenvectors, 6.1
-Diagonalization, 6.2
-Symmetric matrices, 6.4
-Singular value decomposition, 7.1-7.2
 Review for Final Exam, NA
 	  	

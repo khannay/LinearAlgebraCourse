@@ -14,22 +14,20 @@
 
 %Make ShortHands for quick updates
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
-\newcommand{\sems}{{Spring 2019}}
-\newcommand{\dmidOne}{{3/27}}
-\newcommand{\dquizOne}{{1/30}}
-\newcommand{\dquizTwo}{{3/1}}
-\newcommand{\dquizThree}{{4/5}}
-\newcommand{\dquizFour}{{4/17}}
-\newcommand{\finalDate}{{5/6 4:00PM-6:00PM}}
-\newcommand{\semsStart}{{1/14}}
-\newcommand{\semsEnd}{5/8}
-\newcommand{\dprojectDue}{4/26}
+\newcommand{\sems}{{Spring 2020}}
+\newcommand{\dmidOne}{{3/5}}
+\newcommand{\dquizOne}{{2/13}}
+\newcommand{\dquizTwo}{{4/7}}
+\newcommand{\finalDate}{{5/5 1:30PM-3:30PM}} %Updated
+\newcommand{\semsStart}{{1/13}}
+\newcommand{\semsEnd}{5/6}
+\newcommand{\dprojectDue}{4/23}
 \newcommand{\classNum}{MATH 3312}
-\newcommand{\meetingTimes}{MWF: 12:10-1:00PM}
+\newcommand{\meetingTimes}{TR 12:15-1:30PM}
 \newcommand{\classLocation}{MAIN M 211}
-\newcommand{\officeHours}{TBD}
+\newcommand{\officeHours}{MW 12-1, TR 1:30-2:30}
 \newcommand{\courseName}{Linear Algebra}
-  \newcommand{ \lastClass}{5/8}
+\newcommand{ \lastClass}{4/28}
 
 
 \pagestyle{fancyplain}
@@ -64,27 +62,6 @@
 
 
 
-\lstset{
-%language=bash,                          % Code langugage
-basicstyle=\ttfamily,                   % Code font, Examples: \footnotesize, \ttfamily
-keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
-commentstyle=\color{gray},              % Comments font
-numbers=left,                           % Line nums position
-numberstyle=\tiny,                      % Line-numbers fonts
-stepnumber=1,                           % Step between two line-numbers
-numbersep=5pt,                          % How far are line-numbers from code
-backgroundcolor=\color{lightlightgray}, % Choose background color
-frame=none,                             % A frame around the code
-tabsize=2,                              % Default tab size
-captionpos=t,                           % Caption-position = bottom
-breaklines=true,                        % Automatic line breaking?
-breakatwhitespace=false,                % Automatic breaks only at whitespace?
-showspaces=false,                       % Dont make spaces visible
-showtabs=false,                         % Dont make tabls visible
-columns=flexible,                       % Column format
-morekeywords={__global__, __device__},  % CUDA specific keywords
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \begin{center}
@@ -109,11 +86,8 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \setlength{\unitlength}{1in}
 \renewcommand{\arraystretch}{2}
 
-%\noindent\textbf{Course Pages:} \begin{enumerate}
-%\item \url{Schreiner One}
-%\end{enumerate}
 
-\vskip.15in
+%\vskip.15in
 \noindent\textbf{Required Materials:} 
 \begin{itemize}
 \item \textit{Introduction to Linear Algebra}, 5th Edition by Gilbert Strang. 
@@ -123,10 +97,6 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \vskip.15in
 \noindent{\textbf{General Course Outline:}}
 This course will follow the topics as presented in the textbook and other topics as time permits.  You will be expected to have read the textbook section \textit{prior} to attending the class covering that section. However, the exams will be based upon the material presented in lecture and evaluated in the homework assignments. 
-
-%\vskip.15in
-%\noindent\textbf{Computing Access:}
-
 
 \vskip.15in
 \noindent\textbf{Course Description:} 
@@ -153,13 +123,12 @@ This course is designed to build the students understanding of linear algebra, i
 \vskip.15in
 \noindent\textbf{Course Requirements:} 
 \begin{enumerate}
-\item There will be two in-class exams: a midterm (15\%) and a comprehensive final exam (15\%).
-\item There will be four take home quizzes handed out during the semester. Each quiz will count towards as 15\% of the students grade. Absolutely no collaboration is allowed on these take home quizzes. Each student must work entirely independently, I will pursue and academic integrity violations with the utmost vigor. You have been warned!!
-\item The lowest score on the midtern exam and quizzes will be dropped at the end of the semester. \textbf{ALL} students must take the final exam. 
+\item There will be two in-class exams: a midterm (20\%) and a comprehensive final exam (25\%).
+\item There will be two take home quizzes handed out during the semester. Each quiz will count towards as 15\% of the students grade. Absolutely no collaboration is allowed on these take home quizzes. Each student must work entirely independently, I will pursue and academic integrity violations with the utmost vigor. You have been warned!!
+\item Homework completed online through canvas will account for 15\% of the course grade. These assignments will focus on the mechanics of calculating using linear algebra the quizzes will focus on the theory. The exams will be a blend of both.  
 \item A computational project will make up the last 10\% of the final course grade. Details of this assignment will be provided midway through the semester. 
+\item All students must take the comprehensive final exam. 
 \item Grades will be awarded according to the following scale: A: 90-100; B: 80-89; C: 70-79; D: 60-69; F: 0-59.  In the event that you must miss an exam, you MUST notify the instructor and make arrangements to take a make-up exam \textbf{IN ADVANCE}.  Lack of readiness to take an exam is not an excuse unless serious mitigating circumstances are present.  The instructor reserves the right to decide which situations warrant special consideration and which do not.
-\item Students may also earn extra credit by solving a challenge problem provided sporadically by the instructor throughout the semester. The extra-credit received for the solution of a challenge problem will vary with the clarity of the solution and the difficulty of the problem. All challenge problem solutions must be turned in no later than the stroke of midnight on the last class day (\lastClass). Challenge problems will be \textit{challenging} and while I am happy to talk with the students about these problems in office hours I will not provide direct help in solving the problems. Solutions for the challenge problems will be the \textbf{ONLY} opportunities for earning extra-credit during the semester. 
-\item While no formal homework will be assigned during the semester I will provide a list of practice problems for each section we cover in the book. Students will be wise to complete these problems following each class. Issues should be discussed with the instructor well before exams. Exam and quiz  problems will be \textit{heavily} based on these practice problems!
 \item Attendance is essential to the successful completion of this course.  Roll will be taken daily.  While the instructor does not give or deduct points specifically for attendance, it is clear that missing class will adversely affect your learning and your grade.
 \item Please be considerate of your fellow students.  This includes coming to class on time, being prepared, and bringing all necessary materials to class.  You will need to bring your textbook, paper, and something to write with to class daily.  Please do not wear hats to class as this can impair other students’ view and the instructor's ability to tell how well you are following the lecture.
 \item Please do not hesitate to contact me if you have questions or problems – mathematical or not.  I am in a much better position to offer assistance if I know what is going on in your life.  Do NOT wait until you have fallen behind to begin the process of getting help.  You have my office phone number and my e-mail – use them! 
@@ -169,14 +138,12 @@ This course is designed to build the students understanding of linear algebra, i
 
 \vskip.15in
 \noindent\textbf{Important Dates:}
-These dates are tentative and the instructor retains the right to move the dates, with at least one week of notice to the students. 
+These dates are tentative and the instructor retains the right to move the dates, with at least one week of notice to the students. Changes in the date will be annouced in class, students missing class will be expected to contact their classmates to stay current with the class. 
 \begin{center} \begin{minipage}{3.8in}
 \begin{flushleft}
 Quiz 1 \dotfill ~ \dquizOne \\
-Quiz 2 \dotfill ~ \dquizTwo \\
 Midterm      \dotfill ~\dmidOne  \\
-Quiz 3 \dotfill ~ \dquizThree \\
-Quiz 4 \dotfill ~ \dquizFour \\
+Quiz 2 \dotfill ~ \dquizTwo \\
 Project Deadline \dotfill ~\dprojectDue \\
 Final Exam       \dotfill ~\finalDate  \\
 \end{flushleft}
@@ -199,7 +166,7 @@ Final Exam       \dotfill ~\finalDate  \\
 
 \item The STEMZone offers Science, Technology, Engineering, Math (STEM) resources in a dynamic study space, computers housing STEM related software, topic specific workshops, and Student Success Coaching appointments for students who are STEM majors and students in STEM related courses. To set up a Success Coaching appointment, email STEMZone@schreiner.edu.
 
-\item The Schreiner University Code of Academic Conduct will be rigorously enforced. Academic Dishonesty includes, but may not be limited to, cheating, plagiarism, fabrication, obtaining an unfair advantage, collusion, falsification of records and official documents, and unauthorized access to computerized academic or administrative records or systems. Violations may result in a range of sanctions including academic probation, a grade of F for the course, withdrawal of University funding, or expulsion from the University.The student may appeal a finding of misconduct to Dr. Kiley Miller, Dean of the Trull School of Science and Mathematics. (Please see the Student Handbook for policy details.)
+\item The Schreiner University Code of Academic Conduct will be rigorously enforced. Academic Dishonesty includes, but may not be limited to, cheating, plagiarism, fabrication, obtaining an unfair advantage, collusion, falsification of records and official documents, and unauthorized access to computerized academic or administrative records or systems. Violations may result in a range of sanctions including academic probation, a grade of F for the course, withdrawal of University funding, or expulsion from the University.The student may appeal a finding of misconduct to Dr. Bill Davis, Dean of the Trull School of Science and Mathematics. (Please see the Student Handbook for policy details.)
 
 \item No use of tobacco products is allowed in any building on the campus of Schreiner University.  No food or beverage is allowed in any classroom or laboratory. \textbf{No cellular phones are allowed in class}.
 \end{enumerate}
@@ -207,63 +174,41 @@ Final Exam       \dotfill ~\finalDate  \\
 
 \newpage
 
-\centerline{\Large \underline{\textbf{Tentative Course Schedule}}}
-\vspace{5pt}
-\small
-\begin{tabular}{ |p{0.5in}|p{4.0in}|p{1.0in}| }
-\hline
-   \textbf{Date} & \textbf{Topic} & \textbf{Reading}  \\ \hline
-1/14 & The geometry of linear equations &  1.1-2.1 \\ \hline
-1/16 & The geometry of linear equations &  1.1-2.1 \\ \hline
-1/18 & Elimination Basics &  2.2 \\ \hline
-1/23 & Elimination with matrices &  2.2-2.3 \\ \hline
-1/25 & Matrix operations &  2.4-2.5﻿ \\ \hline
-1/28 & Matrix operations &  2.4-2.5﻿ \\ \hline
-1/30 & Matrix operations &  2.4-2.5﻿ \\ \hline
-2/1 & Matrix Inverses &  2.5 \\ \hline
-2/4 & Matrix Inverses &  2.5 \\ \hline
-2/6 & LU and LDU factorization &  2.6﻿ \\ \hline
-2/8 & LU and LDU factorization &  2.6﻿ \\ \hline
-2/11 & Transposes and permutations &  2.7﻿ \\ \hline
-2/13 & Transposes and permutations &  2.7﻿ \\ \hline
-2/15 & Transposes and permutations &  2.7﻿ \\ \hline
-2/18 & Vector spaces and subspaces &  3.1﻿ \\ \hline
-2/20 & Vector spaces and subspaces &  3.1﻿ \\ \hline
-2/22 & The nullspace: Solving Ax = 0 &  3.2﻿ \\ \hline
-2/25 & The nullspace: Solving Ax = 0 &  3.2﻿ \\ \hline
-2/27 & The nullspace: Solving Ax = 0 &  3.2﻿ \\ \hline
-3/1 & Complete Solution to Ax=b &  3.3 \\ \hline
-3/4 & Complete Solution to Ax=b &  3.3 \\ \hline
-3/6 & Independence &  Basis and dimension \\ \hline
-3/8 & Independence &  Basis and dimension \\ \hline
-\end{tabular}
-
-\newpage
-
-\centerline{\Large \underline{\textbf{Tentative Course Schedule}}}
-\vspace{5pt}
-\small
-\begin{tabular}{ |p{0.5in}|p{4.0in}|p{1.0in}| }
+\centerline{ \underline{\textbf{Tentative Course Schedule}}}
+\footnotesize
+\begin{tabular}{ |p{0.5in}|p{3.0in}|p{2.0in}| }
 \hline
   \textbf{Date} & \textbf{Topic} & \textbf{Reading}  \\ \hline
-3/18 & The four fundamental subspaces &  3.5 \\ \hline
-3/20 & Review for Midterm &  NA \\ \hline
-3/22 & In class Midterm &   Covers all material to that point \\ \hline
-3/25 & Orthogonality &  4.1 \\ \hline
-3/27 & Orthogonality &  4.1 \\ \hline
-3/29 & Projections and subspaces &  4.2 \\ \hline
-4/1 & Projections and subspaces &  4.2 \\ \hline
-4/3 & Least squares approximations &  4.3 \\ \hline
-4/5 & Least squares approximations &  4.3 \\ \hline
-4/8 & Gram-Schmidt and A = QR &  4.4 \\ \hline
-4/10 & Gram-Schmidt and A = QR &  4.4 \\ \hline
-4/12 & Eigenvalues and eigenvectors &  6.1 \\ \hline
-4/15 & Eigenvalues and eigenvectors &  6.1 \\ \hline
-4/17 & Eigenvalues and eigenvectors &  6.1 \\ \hline
-4/24 & Diagonalization &  6.2 \\ \hline
-4/26 & Symmetric matrices &  6.4 \\ \hline
-4/29 & Singular value decomposition &  7.1-7.2 \\ \hline
-5/1 & Review for Final Exam &  NA \\ \hline
+1/14 & The geometry of linear equations &  1.1-2.1 \\ \hline
+1/16 & The geometry of linear equations &  1.1-2.1 \\ \hline
+1/21 & Elimination Basics &  2.2 \\ \hline
+1/23 & Elimination with matrices &  2.2-2.3 \\ \hline
+1/28 & Matrix operations &  2.4-2.5﻿ \\ \hline
+1/30 & Matrix operations &  2.4-2.5﻿ \\ \hline
+2/4 & Matrix Inverses &  2.5 \\ \hline
+2/6 & Matrix Inverses &  2.5 \\ \hline
+2/11 & LU and LDU factorization &  2.6﻿ \\ \hline
+2/13 & Transposes and permutations &  2.7﻿ \\ \hline
+2/18 & Transposes and permutations &  2.7﻿ \\ \hline
+2/20 & Vector spaces and subspaces &  3.1﻿ \\ \hline
+2/25 & The nullspace: Solving Ax = 0 &  3.2﻿ \\ \hline
+2/27 & The nullspace: Solving Ax = 0 &  3.2﻿ \\ \hline
+3/3 & Review for Midterm &  NA \\ \hline
+3/5 & In class Midterm &   Covers all material to that point \\ \hline
+3/10 & Complete Solution to Ax=b &  3.3 \\ \hline
+3/12 & Complete Solution to Ax=b &  3.3 \\ \hline
+3/24 & Independence Basis and dimension &  3.4 \\ \hline
+3/26 & Independence Basis and dimension &  3.4 \\ \hline
+3/31 & The four fundamental subspaces &  3.5 \\ \hline
+4/2 & Orthogonality of the Four Spaces &  4.1 \\ \hline
+4/7 & Projections and subspaces &  4.2 \\ \hline
+4/9 & Least squares approximations &  4.3 \\ \hline
+4/14 & Gram-Schmidt and A = QR &  4.4 \\ \hline
+4/21 & Eigenvalues and eigenvectors &  6.1 \\ \hline
+4/23 & Eigenvalues and eigenvectors &  6.1 \\ \hline
+4/28 & Review for Final Exam &  NA \\ \hline
+
+
 \end{tabular}
 
 %%%%%% THE END 

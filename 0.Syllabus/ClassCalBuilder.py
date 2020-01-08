@@ -6,11 +6,11 @@ class MakeSyllabusTable:
 
     def __init__(self, excludedDatesFileName, classInfo=None):
 
-        self.year=2019
+        self.year=2020
         self.homework=False
-        self.classStartDate=(1,14) #month/year
-        self.classEndDate=(5,1)
-        self.SevenDay=[True,False,True,False,True, False, False] #M-Sunday meet true or false
+        self.classStartDate=(1,13) #month/year
+        self.classEndDate=(4,28)
+        self.SevenDay=[False,True,False,True,False, False, False] #M-Sunday meet true or false
         self.excludedDates=self.loadExcludedDates(excludedDatesFileName)
         #self.info=info
 
@@ -80,5 +80,5 @@ class MakeSyllabusTable:
 
 if __name__=='__main__':
 
-    a=MakeSyllabusTable('excludedDates2018Spring.txt', 'LinearAlg.txt')
+    a=MakeSyllabusTable('excludedDates2020Spring.txt', 'LinearAlg.txt')
     a.printLatexTable()
