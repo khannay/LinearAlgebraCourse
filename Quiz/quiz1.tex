@@ -114,8 +114,8 @@ morekeywords={__global__, __device__},  % CUDA specific keywords
 \vspace{0.125in}
 \end{center}
 \underline{Directions:} \\
-Complete this exam without consulting with \underline{anyone} else for help answering the questions (electronically, in person, etc). You may use your notes, the notes on canvas and your textbook. Additionally, you are allowed to use numerical computing software to aid you in answering the questions. \textbf{You must show all of your work. If you use numerical software then write in the command you used. Failure to show all of the steps used to obtain your solution will result in NO points being awarded for that question. } 
-\noindent The quiz must be turned in by the beginning of class on Weds 2/6/2019. If you want to turn it in early make sure you hand it to me in person (don't put it in the box outside my office). Good luck! \\
+Complete this quiz without consulting with \underline{anyone} else for help answering the questions (electronically, in person, etc). You may use your notes, the notes on canvas and your textbook. Additionally, you are allowed to use numerical computing software to aid you in answering the questions. \textbf{You must show all of your work. If you use numerical software then write in the command you used. Failure to show all of the steps used to obtain your solution will result in NO points being awarded for that question. } 
+\noindent The quiz must scanned and uploaded as a PDF file on Canvas. Upload your final solutions by the end of the day on Tuesday 2/18/2019.  Good luck! \\
 \noindent\rule{15cm}{0.4pt}
 
 \vspace{0.25in}
@@ -124,13 +124,13 @@ Complete this exam without consulting with \underline{anyone} else for help answ
 \item (15 points) Create a $3 \times 3$ matrix equation $Ax=b$ which will give no solutions (pick a matrix $A$ and a right-hand side $b$). Prove this by performing a Gaussian elimination on it. Make sure you show your steps (you can check this in Matlab, but show the steps). 
 \item (15 points) Alter your choice of the right-hand side $b$ for the first question so that it now has infinite solutions. Demonstrate this using a Gaussian elimination. 
 \item (20 points) Start with the column vector $$u_0=\begin{bmatrix} 0 \\ 1 \end{bmatrix}$$ Multiply again and again by the \textbf{Markov matrix} $$A= \begin{bmatrix}
-0.5 & 0.20 \\
-0.5 & 0.80
+0.9 & 0.20 \\
+0.1 & 0.80
 \end{bmatrix} $$
 so that $u_n=A^n u_0$. For example $u_1$ is given by:
 $$u_1=\begin{bmatrix}
-0.5 & 0.20 \\
-0.5 & 0.80
+0.9 & 0.20 \\
+0.1 & 0.80
 \end{bmatrix} \begin{bmatrix} 0 \\1 \end{bmatrix}$$
 Find $u_1,u_2,u_3$. What property do you notice about the $u_0, u_1, u_2, ...$ vectors? For $n$ very large what does $u_n$ become?
 \item (10 points) What elimination matrix $E_{21}$ is required to reduce the following matrix to row echelon form $U$? (ready for solution by back substitution).
@@ -138,7 +138,7 @@ Find $u_1,u_2,u_3$. What property do you notice about the $u_0, u_1, u_2, ...$ v
 E_{21}
 \begin{bmatrix}
 1 & 1 \\
-2 & -1 
+5 & -1 
 \end{bmatrix}
 =\begin{bmatrix}
 1 &1 \\ 0 & ?
@@ -147,8 +147,8 @@ E_{21}
 \item (15 points) Write the following matrix as a sum of \textit{outer products}. 
 \begin{equation}
 \begin{bmatrix}
- 1 & 2 & 0 \\
- 0 & 3 & 0 \\
+ 8 & -2 & 0 \\
+ 0 & 6 & 0 \\
  -1 & 0 &0
 \end{bmatrix}
 \end{equation}
@@ -177,7 +177,7 @@ If the three solutions $x_1,x_2,x_3$ are the columns of a matrix $X$ then what i
 \item (10 points) Find all solutions to the following system $Ax=b$:
 \begin{equation}
 \begin{bmatrix}
-8 & 1 & 6 \\
+6 & 1 & 4 \\
 3&5& 7\\
 4 & 9 &2 \\
 \end{bmatrix}
