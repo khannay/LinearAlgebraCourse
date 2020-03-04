@@ -1,0 +1,223 @@
+\documentclass[12pt, a4paper]{article}
+%\usepackage{geometry}
+\usepackage[inner=2.5cm,outer=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\pagestyle{empty}
+\usepackage{graphicx}
+\usepackage{fancyhdr, lastpage, bbding, pmboxdraw}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[colorlinks,pagebackref,pdfusetitle,urlcolor=darkblue,citecolor=darkblue,linkcolor=darkred,bookmarksnumbered,plainpages=false]{hyperref}
+\usepackage{amsfonts}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{placeins}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{verbatim} % used to display code
+\usepackage{fancyvrb}
+\usepackage{acronym}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\VerbatimFootnotes
+
+%For using units 
+\usepackage{siunitx}
+
+%Packages for drawing triangles
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+%Packages to add highlighting
+\usepackage{xcolor}
+\usepackage{soul}
+
+
+%Set up the headers
+\pagestyle{fancyplain}
+\fancyhf{}
+\lhead{ \fancyplain{}{\classNum} }
+\chead{ \fancyplain{}{\topic} }
+\rhead{ \fancyplain{}{Dr. Hannay} }
+%\rfoot{\fancyplain{}{page \thepage\ of \pageref{LastPage}}}
+\fancyfoot[RO, LE] {page \thepage\ of \pageref{LastPage} }
+\thispagestyle{plain}
+
+
+%Set up the theorem enviroment
+\newtheoremstyle{break}
+  {\topsep}{\topsep}%
+  {\itshape}{}%
+  {\bfseries}{}%
+  {\newline}{}%
+\theoremstyle{break}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{defn}[theorem]{\underline{Definition:}}
+
+%Set up custom commands
+\renewcommand\thesection{\Roman{section}.}
+%exercise command \ex{question}{space times 0.5 inches}
+\newcommand{\question}[3]     {
+ #1 (\textbf{#2 points}) \newline 
+\newcount\Scount
+\Scount=0
+\loop\vspace*{0.5in}\par\goodbreak\advance\Scount by 1 \ifnum\Scount< #3 \repeat
+}%Makes an exercise with space left for the students to write the answer
+\newcommand{\makesol}[1]     {
+\newcount\Scount
+\Scount=0
+\loop\vspace*{0.5in}\par\goodbreak\advance\Scount by 1 \ifnum\Scount< #1 \repeat
+}%Makes an exercise with space left for the students to write the answer
+
+\newcommand{\fpquestion}[3]     {
+ #1 (\textbf{#2 points}) \newline 
+\newpage
+}%Makes an exercise with space left for the students to write the answer
+
+%Calculus specific shorthands
+\newcommand{\dlim}{\lim_{h\rightarrow0}}
+\newcommand{\myint}{\displaystyle \int}
+
+%Exams only option for math displays
+\everymath{\displaystyle}
+
+%Make ShortHands for quick updates
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\topic}{{Midterm}}
+\newcommand{\classNum}{{MATH 3312}}
+\newcommand{\prob}{{\mathbb{P}}}
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+\definecolor{lightlightgray}{gray}{0.93}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.6,0}
+\definecolor{red}{rgb}{.98,0,0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{flushleft}
+\Large \textbf{Name: } \underline{\hspace{8cm}} \\
+\end{flushleft}
+\vspace{0.25in}
+\begin{center}
+{\Large \textsc{\underline{MATH 3312: Midterm Exam}}}
+\vspace{0.125in}
+\end{center}
+\section{True/False Questions}
+Are the following statements true or false? Each question is worth 2 points. 
+\begin{enumerate}
+\item \underline{\hspace{1cm}} The matrix $
+\begin{bmatrix}
+-2 & 1 & 0 \\
+0 &6 &-10 \\
+0 & 0 & -2 
+\end{bmatrix} $ is invertible
+\item \underline{\hspace{1cm}}  If $A$ is an $m\times n$ matrix of rank $r=m<n$ then $Ax=b$ has infinite solutions for any $b$. 
+\item \underline{\hspace{1cm}} If the matrix A has a trivial nullspace then it has full column rank.
+\item \underline{\hspace{1cm}} If $C$ is a $6 \times 10$ matrix then it is a function $C: \mathbb{R}^6 \longrightarrow \mathbb{R}^{10}$
+\item \underline{\hspace{1cm}} Let $A$ be a matrix and $R$ be the reduced row echelon form of $A$. Then $C(A^T)=C(R^T)$.  
+\item \underline{\hspace{1cm}} A square matrix $A$ is invertible if and only if the nullspace $N(A)$ contains just the zero vector $\vec{0}$. 
+\item  \underline{\hspace{1cm}} A matrix $A$ where $N(A) \neq \vec{0}$ cannot have a unique solution to any $Ax=b$. 
+\item  \underline{\hspace{1cm}} If a matrix $C$ is $10 \times 3$ then the system must have either 0 or infinite solutions to a system $Cx=b$. 
+\item  \underline{\hspace{1cm}} A square matrix can have no free variables when row reduced.
+\item  \underline{\hspace{1cm}} If $G$ is a $4 \times 5$ matrix with rank $4$ then the dimension of the nullspace is $0$. 
+\end{enumerate}
+\newpage
+
+
+\section{Questions}
+\begin{enumerate}
+\item (20  points) Solve the following system for $\vec{x}=\langle x_1,x_2,x_3 \rangle$
+\begin{equation}
+\begin{bmatrix}
+1&2&-1 \\
+0&1&1 \\
+2&0&3 \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2 \\
+x_3 
+\end{bmatrix}=
+\begin{bmatrix}
+-4\\
+2\\
+11
+\end{bmatrix} \nonumber
+\end{equation} 
+%Ans=[1 -1 3]
+\newpage
+\item (20 points) Find the LU decomposition of the following matrix
+\begin{equation}
+A=
+\begin{bmatrix}
+2 & 1 & 0 \\
+-4 & -1 & 4 \\
+2 & 1 & 2 \\
+\end{bmatrix}
+\end{equation}
+
+%Ans L=[1 0 0; -2 1 0; 1 0 1]
+%U=[2 1 0; 0 1 4; 0 0 2]
+\newpage
+\item (20 points)  Find the complete solution (general solution) to the following system $Ax=b$:
+\begin{equation}
+\begin{bmatrix}
+1 & 3 & 1 &2  \\
+2&6 &4 & 8 \\
+0&0&2&4 \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1\\
+x_2 \\
+x_3 \\
+x_4 
+\end{bmatrix}=
+\begin{bmatrix}
+1 \\
+4 \\
+2 
+\end{bmatrix} \nonumber
+\end{equation}
+You may be interested to know that the reduced row echelon form of the matrix above is:
+$$
+\begin{bmatrix}
+1 & 3 & 0 &0  \\
+0&0 &1 & 2 \\
+0&0&0&0 \\
+\end{bmatrix} \nonumber
+$$
+\newpage
+
+\item (20 points) Find the nullspace of the below matrix
+\begin{equation}
+\begin{bmatrix}
+1 & 2 & 1 \\
+3&6&3 \\
+-1&-2&-1
+\end{bmatrix} \nonumber
+\end{equation}
+You may be interested to know that the Reduced Row Echelon Form (RREF) of this matrix is given by:
+\begin{equation}
+\begin{bmatrix}
+1 & 2 & 1 \\
+0&0&0 \\
+0&0&0
+\end{bmatrix} \nonumber
+\end{equation}
+%ans [1,3,-1][1,2,1]
+\newpage
+
+
+
+
+
+
+
+\end{enumerate}
+
+\end{document}
